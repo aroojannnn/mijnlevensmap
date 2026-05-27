@@ -1,66 +1,102 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inloggen - Nalatenschap.nl</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inloggen | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">N</div>
-        <div>
-          <strong>Nalatenschap.nl</strong>
-          <span>Rust en overzicht voor later</span>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="logo">MijnLevensmap.nl</a>
+
+    <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/hoe-werkt-het">Hoe werkt het?</a>
+      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
+      <a href="/contact">Contact</a>
+      <a href="/login" class="nav-button">Inloggen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="login-page">
+    <div class="container login-grid">
+      <div class="login-intro">
+        <span class="eyebrow">Veilig toegang tot uw levensmap</span>
+        <h1>Inloggen bij MijnLevensmap.nl</h1>
+        <p>
+          Log in om uw persoonlijke levensmap te bekijken, aan te vullen of bij te werken.
+          Zo houdt u belangrijke gegevens, wensen en contactpersonen overzichtelijk bij elkaar.
+        </p>
+        <div class="notice">
+          <strong>Belangrijk:</strong>
+          MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
+          Gebruik hier nooit uw DigiD-gegevens.
         </div>
       </div>
 
-      <nav>
-        <a href="/">Home</a>
-        <a href="/over-ons">Over ons</a>
-        <a href="/hoe-werkt-het">Hoe werkt het</a>
-        <a href="/login">Inloggen</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+      <div class="login-panel">
+        <h2>Inloggen</h2>
+        <p class="login-helper">
+          Vul uw e-mailadres en wachtwoord in om verder te gaan.
+        </p>
 
-  <main>
-    <section class="login-page">
-      <div class="login-intro">
-        <p class="label">Uw persoonlijke omgeving</p>
-        <h1>Inloggen op Nalatenschap.nl</h1>
-        <p>Log in met uw e-mailadres en wachtwoord om toegang te krijgen tot uw persoonlijke omgeving.</p>
-      </div>
-
-      <div class="login-form-wrap">
-        <form action="/login" method="POST" class="login-form">
-          <div class="form-group">
+        <form action="/login" method="POST" class="contact-form">
+          <div class="form-row">
             <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+            <input type="email" id="email" name="email" placeholder="uwnaam@email.nl" required />
           </div>
 
-          <div class="form-group">
+          <div class="form-row">
             <label for="password">Wachtwoord</label>
-            <input type="password" id="password" name="password" placeholder="Uw wachtwoord" required>
+            <input type="password" id="password" name="password" placeholder="Uw wachtwoord" required />
           </div>
 
-          <button type="submit" class="btn-primary">Inloggen</button>
-
-          <div class="login-links">
-            <a href="#">Wachtwoord vergeten?</a>
-            <a href="/register">Account aanmaken</a>
-
-          </div>
+          <button type="submit" class="button primary full-width">Inloggen</button>
         </form>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>© 2026 Nalatenschap.nl — Conceptwebsite</p>
-  </footer>
+        <div class="login-links">
+          <a href="#">Wachtwoord vergeten?</a>
+          <a href="/register">Nog geen account? Registreer hier</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>&copy; 2026 MijnLevensmap.nl</p>
+    <div>
+      <a href="/privacy">Privacy</a>
+      <a href="/voorwaarden">Voorwaarden</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+    });
+  }
+</script>
+
 </body>
 </html>
