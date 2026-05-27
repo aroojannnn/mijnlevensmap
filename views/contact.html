@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Nalatenschap.nl</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>Nalatenschap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
-      </div>
-
+    <div class="container nav">
+      <a href="/" class="logo">MijnLevensmap.nl</a>
       <nav>
         <a href="/">Home</a>
-        <a href="#informatie">Informatie</a>
-        <a href="/login">Inloggen</a>
-        <a href="/contact">Contact</a>
-        <a href="/over-ons">Over ons</a>
-        <a href="/hoe-werkt-het">Hoe werkt het</a>
+        <a href="/hoe-werkt-het">Hoe werkt het?</a>
         <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+        <a href="/login" class="nav-button">Inloggen</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="page-hero">
-      <p class="label">Contact</p>
-      <h1>Neem contact op met Nalatenschap.nl</h1>
-      <p>
-        Heeft u een vraag over het concept, de demo-omgeving of de mogelijke
-        ontwikkeling van Nalatenschap.nl? Neem gerust contact op.
-      </p>
+      <div class="container">
+        <span class="eyebrow dark">Contact</span>
+        <h1>Heeft u een vraag over MijnLevensmap.nl?</h1>
+        <p>
+          Neem gerust contact met ons op. Wij helpen u graag verder met vragen over het platform,
+          uw account of het veilig vastleggen van belangrijke informatie.
+        </p>
+      </div>
     </section>
 
-    <section class="content-page">
-      <div class="contact-layout">
-        <div class="content-block">
-          <h2>Contactgegevens</h2>
+    <section class="section">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Stuur een bericht</h2>
           <p>
-            Voor vragen over deze conceptwebsite kunt u contact opnemen via e-mail.
+            Vul het formulier in. Wij proberen zo snel mogelijk te reageren.
           </p>
 
-          <p>
-            <strong>E-mail:</strong>
-            <a href="mailto:info@nalatenschap.nl">info@nalatenschap.nl</a>
-          </p>
+          <form class="contact-form" action="#" method="post">
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" placeholder="Uw naam" />
 
-          <p>
-            Deze website is op dit moment een conceptomgeving. Er worden geen echte
-            documenten, persoonsgegevens of officiële inloggegevens verwerkt.
-          </p>
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="uw@email.nl" />
+
+            <label for="subject">Onderwerp</label>
+            <input type="text" id="subject" name="subject" placeholder="Waar gaat uw vraag over?" />
+
+            <label for="message">Bericht</label>
+            <textarea id="message" name="message" rows="6" placeholder="Typ hier uw bericht"></textarea>
+
+            <button type="submit" class="button form-button">Bericht versturen</button>
+          </form>
         </div>
 
-        <div class="notice-box">
-          <h2>Belangrijke toelichting</h2>
+        <aside class="info-panel">
+          <h2>Contactgegevens</h2>
+          <div class="info-item">
+            <strong>E-mail</strong>
+            <p>info@mijnlevensmap.nl</p>
+          </div>
+
+          <div class="info-item">
+            <strong>Reactietijd</strong>
+            <p>Wij streven ernaar om binnen 1 tot 2 werkdagen te reageren.</p>
+          </div>
+
+          <div class="info-item">
+            <strong>Belangrijk</strong>
+            <p>
+              Deel via het contactformulier geen wachtwoorden, medische gegevens of andere zeer gevoelige informatie.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container two-column">
+        <div>
+          <h2>Een vraag vooraf?</h2>
           <p>
-            Mijnlevensmap.nl is geen officiële overheidsdienst en gebruikt geen echte
-            DigiD-login. De website is bedoeld als professioneel concept voor een
-            mogelijk digitaal platform rondom nalatenschapsplanning.
+            MijnLevensmap.nl is bedoeld om belangrijke gegevens, wensen en documenten overzichtelijk vast te leggen.
+            Heeft u vragen over het gebruik of de mogelijkheden, dan denken wij graag met u mee.
           </p>
+        </div>
+        <div class="notice">
+          <strong>Let op:</strong>
+          MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>MijnLevensmap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
+    <div class="container footer-grid">
+      <p>&copy; 2026 MijnLevensmap.nl</p>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/voorwaarden">Voorwaarden</a>
+        <a href="/contact">Contact</a>
       </div>
-
-      <p>
-        MijnLevensmap.nl is een professioneel digitaal concept voor het overzichtelijk
-        voorbereiden van belangrijke informatie, documenten, wensen en contactpersonen.
-      </p>
     </div>
-
-    <div class="footer-column">
-      <h3>Website</h3>
-      <a href="/">Home</a>
-      <a href="/over-ons">Over ons</a>
-      <a href="/hoe-werkt-het">Hoe werkt het</a>
-      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Concept</h3>
-      <a href="/login">Demo-login</a>
-      <a href="/dashboard">Demo-dashboard</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/contact">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Belangrijk</h3>
-      <p>
-        Deze website is een conceptomgeving. Gebruik geen echte persoonlijke gegevens,
-        documenten of officiële inloggegevens.
-      </p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 MijnLevensmap.nl — Conceptwebsite</span>
-    <span>Geen officiële overheidsdienst · Geen DigiD-login</span>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
