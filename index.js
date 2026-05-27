@@ -2,10 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const session = require("express-session");
 
 const User = require("./models/User");
 
@@ -17,6 +17,14 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+
+// Sessie instellen
+app.use(session({
+  secret: process.env.SESSION_SECRET || "nalatenschap-secret-key",
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 }
+}));
 
 // Views map
 const viewsPath = path.join(__dirname, "views");
@@ -37,7 +45,15 @@ mongoose
     process.exit(1);
   });
 
-// Pagina routes
+// Middleware: controleer of gebruiker is ingelogd
+function requireLogin(req, res, next) {
+  if (req.session && req.session.userId) {
+    return next();
+  }
+  return res.redirect("/login");
+}
+
+// Publieke pagina routes
 app.get("/", (req, res) => {
   res.sendFile(path.join(viewsPath, "home.html"));
 });
@@ -58,10 +74,6 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(viewsPath, "login.html"));
 });
 
-app.get("/dashboard", (req, res) => {
-  res.sendFile(path.join(viewsPath, "dashboard.html"));
-});
-
 app.get("/hoe-werkt-het", (req, res) => {
   res.sendFile(path.join(viewsPath, "hoe-werkt-het.html"));
 });
@@ -78,7 +90,12 @@ app.get("/voorwaarden", (req, res) => {
   res.sendFile(path.join(viewsPath, "voorwaarden.html"));
 });
 
-app.get("/persoonlijke-gegevens", (req, res) => {
+// Beveiligde pagina routes (alleen voor ingelogde gebruikers)
+app.get("/dashboard", requireLogin, (req, res) => {
+  res.sendFile(path.join(viewsPath, "dashboard.html"));
+});
+
+app.get("/persoonlijke-gegevens", requireLogin, (req, res) => {
   res.sendFile(path.join(viewsPath, "persoonlijke-gegevens.html"));
 });
 
@@ -191,6 +208,9 @@ app.post("/login", async (req, res) => {
       `);
     }
 
+    req.session.userId = user._id;
+    req.session.userName = user.name;
+
     return res.redirect("/dashboard");
   } catch (error) {
     console.error("Loginfout:", error);
@@ -201,6 +221,12 @@ app.post("/login", async (req, res) => {
       <a href="/login">Probeer opnieuw</a>
     `);
   }
+});
+
+// Uitloggen
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/login");
 });
 
 // 404 fallback
