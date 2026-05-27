@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <header class="site-header">
+
+<header class="site-header">
   <div class="container nav">
     <a href="/" class="logo">MijnLevensmap.nl</a>
 
@@ -27,92 +28,85 @@
   </div>
 </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <span class="eyebrow dark">Contact</span>
-        <h1>Heeft u een vraag over MijnLevensmap.nl?</h1>
-        <p>
-          Neem gerust contact met ons op. Wij helpen u graag verder met vragen over het platform,
-          uw account of het veilig vastleggen van belangrijke informatie.
-        </p>
-      </div>
-    </section>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Neem contact op</span>
+      <h1>Waarmee kunnen wij helpen?</h1>
+      <p>
+        Heeft u een vraag over MijnLevensmap.nl, uw account of het gebruik van een levensmap?
+        Laat uw gegevens achter. Dan nemen wij contact met u op.
+      </p>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <h2>Stuur een bericht</h2>
-          <p>
-            Vul het formulier in. Wij proberen zo snel mogelijk te reageren.
-          </p>
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-form-card">
+        <h2>Stuur een bericht</h2>
 
-          <form class="contact-form" action="#" method="post">
+        <form action="#" method="post" class="contact-form">
+          <div class="form-row">
             <label for="name">Naam</label>
             <input type="text" id="name" name="name" placeholder="Uw naam" />
+          </div>
 
+          <div class="form-row">
             <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="uw@email.nl" />
+            <input type="email" id="email" name="email" placeholder="uwnaam@email.nl" />
+          </div>
 
+          <div class="form-row">
             <label for="subject">Onderwerp</label>
             <input type="text" id="subject" name="subject" placeholder="Waar gaat uw vraag over?" />
+          </div>
 
+          <div class="form-row">
             <label for="message">Bericht</label>
             <textarea id="message" name="message" rows="6" placeholder="Typ hier uw bericht"></textarea>
-
-            <button type="submit" class="button form-button">Bericht versturen</button>
-          </form>
-        </div>
-
-        <aside class="info-panel">
-          <h2>Contactgegevens</h2>
-          <div class="info-item">
-            <strong>E-mail</strong>
-            <p>info@mijnlevensmap.nl</p>
           </div>
 
-          <div class="info-item">
-            <strong>Reactietijd</strong>
-            <p>Wij streven ernaar om binnen 1 tot 2 werkdagen te reageren.</p>
-          </div>
-
-          <div class="info-item">
-            <strong>Belangrijk</strong>
-            <p>
-              Deel via het contactformulier geen wachtwoorden, medische gegevens of andere zeer gevoelige informatie.
-            </p>
-          </div>
-        </aside>
+          <button type="submit" class="button primary">Versturen</button>
+        </form>
       </div>
-    </section>
 
-    <section class="section soft">
-      <div class="container two-column">
-        <div>
-          <h2>Een vraag vooraf?</h2>
-          <p>
-            MijnLevensmap.nl is bedoeld om belangrijke gegevens, wensen en documenten overzichtelijk vast te leggen.
-            Heeft u vragen over het gebruik of de mogelijkheden, dan denken wij graag met u mee.
-          </p>
+      <aside class="contact-side-card">
+        <h2>Contactgegevens</h2>
+        <p>
+          Wij proberen vragen zo duidelijk mogelijk te beantwoorden.
+          Vermeld geen wachtwoorden of zeer gevoelige gegevens in het contactformulier.
+        </p>
+
+        <div class="contact-detail">
+          <strong>E-mail</strong>
+          <span>info@mijnlevensmap.nl</span>
         </div>
+
+        <div class="contact-detail">
+          <strong>Reactietijd</strong>
+          <span>Binnen enkele werkdagen</span>
+        </div>
+
         <div class="notice">
           <strong>Let op:</strong>
           MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>&copy; 2026 MijnLevensmap.nl</p>
-      <div>
-        <a href="/privacy">Privacy</a>
-        <a href="/voorwaarden">Voorwaarden</a>
-        <a href="/contact">Contact</a>
-      </div>
+      </aside>
     </div>
-  </footer>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>&copy; 2026 MijnLevensmap.nl</p>
+    <div>
+      <a href="/privacy">Privacy</a>
+      <a href="/voorwaarden">Voorwaarden</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
 <script>
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.querySelector(".main-nav");
@@ -125,5 +119,6 @@
     });
   }
 </script>
+
 </body>
 </html>

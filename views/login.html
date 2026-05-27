@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
- <header class="site-header">
+
+<header class="site-header">
   <div class="container nav">
     <a href="/" class="logo">MijnLevensmap.nl</a>
 
@@ -27,110 +28,65 @@
   </div>
 </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <span class="eyebrow dark">Veilig inloggen</span>
-        <h1>Toegang tot uw persoonlijke levensmap.</h1>
+<main>
+  <section class="login-page">
+    <div class="container login-grid">
+      <div class="login-intro">
+        <span class="eyebrow">Veilig toegang tot uw levensmap</span>
+        <h1>Inloggen bij MijnLevensmap.nl</h1>
         <p>
-          Log in om uw gegevens, documenten, wensen en contactpersonen overzichtelijk te beheren.
-          Deze pagina is onderdeel van MijnLevensmap.nl en is geen officiële overheidsdienst.
+          Log in om uw persoonlijke levensmap te bekijken, aan te vullen of bij te werken.
+          Zo houdt u belangrijke gegevens, wensen en contactpersonen overzichtelijk bij elkaar.
         </p>
+
+        <div class="notice">
+          <strong>Belangrijk:</strong>
+          MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
+          Gebruik hier nooit uw DigiD-gegevens.
+        </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container login-grid">
-        <div class="login-panel">
-          <h2>Inloggen met e-mail</h2>
-          <p>
-            Gebruik uw e-mailadres en wachtwoord om toegang te krijgen tot uw account.
-          </p>
+      <div class="login-panel">
+        <h2>Inloggen</h2>
+        <p class="login-helper">
+          Vul uw e-mailadres en wachtwoord in om verder te gaan.
+        </p>
 
-          <form class="login-form" action="/dashboard" method="get">
+        <form action="#" method="post" class="contact-form">
+          <div class="form-row">
             <label for="email">E-mailadres</label>
-            <input type="email" id="email" name="email" placeholder="uw@email.nl" />
+            <input type="email" id="email" name="email" placeholder="uwnaam@email.nl" />
+          </div>
 
+          <div class="form-row">
             <label for="password">Wachtwoord</label>
             <input type="password" id="password" name="password" placeholder="Uw wachtwoord" />
+          </div>
 
-            <div class="form-row">
-              <label class="check-label">
-                <input type="checkbox" name="remember" />
-                Ingelogd blijven
-              </label>
-              <a href="#" class="text-link">Wachtwoord vergeten?</a>
-            </div>
+          <button type="submit" class="button primary full-width">Inloggen</button>
+        </form>
 
-            <button type="submit" class="button form-button">Inloggen</button>
-          </form>
+        <div class="login-links">
+          <a href="#">Wachtwoord vergeten?</a>
+          <a href="#">Nog geen account?</a>
         </div>
-
-        <aside class="login-options">
-          <article class="option-card highlighted">
-            <h3>Nog geen account?</h3>
-            <p>
-              Maak een account aan en begin met het veilig ordenen van belangrijke informatie.
-            </p>
-            <a href="#" class="button option-button">Account aanmaken</a>
-          </article>
-
-          <article class="option-card">
-            <h3>Gemachtigde toegang</h3>
-            <p>
-              Heeft u toegang gekregen namens iemand anders? Log dan in met uw eigen account.
-            </p>
-            <a href="#" class="text-link">Meer over gemachtigden</a>
-          </article>
-
-          <article class="option-card identity-card">
-  <h3>Inloggen met identiteitscontrole</h3>
-  <p>
-    Voor extra zekerheid werken wij aan een veilige vorm van identiteitscontrole.
-    Deze functie is nog niet beschikbaar.
-  </p>
-  <button class="button disabled-button" type="button" disabled>Binnenkort beschikbaar</button>
-</article>
-
-<article class="option-card">
-  <h3>Let op</h3>
-  <p>
-    MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
-    Deze functie is geen DigiD-login.
-  </p>
-</article>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="container two-column">
-        <div>
-          <h2>Rustig en overzichtelijk beheren</h2>
-          <p>
-            Binnen uw account kunt u belangrijke gegevens stap voor stap vastleggen.
-            Zo houdt u overzicht voor uzelf en duidelijkheid voor uw naasten.
-          </p>
-        </div>
-        <div class="notice">
-          <strong>Beveiliging:</strong>
-          Deel uw wachtwoord nooit met anderen. Gebruik bij voorkeur een uniek en sterk wachtwoord.
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>&copy; 2026 MijnLevensmap.nl</p>
-      <div>
-        <a href="/privacy">Privacy</a>
-        <a href="/voorwaarden">Voorwaarden</a>
-        <a href="/contact">Contact</a>
       </div>
     </div>
-  </footer>
-  <script>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>&copy; 2026 MijnLevensmap.nl</p>
+    <div>
+      <a href="/privacy">Privacy</a>
+      <a href="/voorwaarden">Voorwaarden</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
   const menuToggle = document.querySelector(".menu-toggle");
   const mainNav = document.querySelector(".main-nav");
 
@@ -142,5 +98,6 @@
     });
   }
 </script>
+
 </body>
 </html>

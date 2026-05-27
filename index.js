@@ -18,6 +18,13 @@ app.get("/persoonlijke-gegevens", (req, res) => {
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.send(html);
 });
+app.get("/privacy", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "privacy.html"));
+});
+
+app.get("/voorwaarden", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "voorwaarden.html"));
+});
 app.get('/', (req, res) => {
   const filePath = path.join(__dirname, 'views', 'home.html');
   const html = fs.readFileSync(filePath, 'utf8');
