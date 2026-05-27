@@ -2,8 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const User = require("./models/User");
 
@@ -11,32 +13,25 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Static files
 app.use(express.static(path.join(__dirname, "public")));
 
 // Views map
 const viewsPath = path.join(__dirname, "views");
 
-// MongoDB URI
+// MongoDB verbinden
 const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
 
 if (!mongoUri) {
   console.error("Geen MongoDB URI gevonden in .env");
-  console.error("Gebruik MONGODB_URI=... of MONGO_URI=...");
   process.exit(1);
 }
 
-// Database verbinden
 mongoose
-  .connect(mongoUri, {
-    serverSelectionTimeoutMS: 10000,
-  })
-  .then(() => {
-    console.log("MongoDB verbonden!");
-  })
+  .connect(mongoUri, { serverSelectionTimeoutMS: 10000 })
+  .then(() => console.log("MongoDB verbonden!"))
   .catch((error) => {
     console.error("MongoDB verbindingsfout:", error.message);
     process.exit(1);
@@ -49,6 +44,10 @@ app.get("/", (req, res) => {
 
 app.get("/contact", (req, res) => {
   res.sendFile(path.join(viewsPath, "contact.html"));
+});
+
+app.get("/over-ons", (req, res) => {
+  res.sendFile(path.join(viewsPath, "over-ons.html"));
 });
 
 app.get("/register", (req, res) => {
@@ -79,7 +78,11 @@ app.get("/voorwaarden", (req, res) => {
   res.sendFile(path.join(viewsPath, "voorwaarden.html"));
 });
 
-// Status route om database te checken
+app.get("/persoonlijke-gegevens", (req, res) => {
+  res.sendFile(path.join(viewsPath, "persoonlijke-gegevens.html"));
+});
+
+// Status route
 app.get("/status", (req, res) => {
   const states = {
     0: "Niet verbonden",
@@ -87,7 +90,6 @@ app.get("/status", (req, res) => {
     2: "Verbinden...",
     3: "Verbinding verbreken...",
   };
-
   res.json({
     server: "Online",
     database: states[mongoose.connection.readyState] || "Onbekend",
@@ -98,13 +100,7 @@ app.get("/status", (req, res) => {
 // Registratie verwerken
 app.post("/register", async (req, res) => {
   try {
-    console.log("REGISTER BODY:", req.body);
-
-    const body = req.body || {};
-    const name = body.name;
-    const email = body.email;
-    const password = body.password;
-    const confirmPassword = body.confirmPassword;
+    const { name, email, password, confirmPassword } = req.body || {};
 
     if (!name || !email || !password || !confirmPassword) {
       return res.status(400).send(`
@@ -131,7 +127,6 @@ app.post("/register", async (req, res) => {
     }
 
     const normalizedEmail = email.toLowerCase().trim();
-
     const existingUser = await User.findOne({ email: normalizedEmail });
 
     if (existingUser) {
@@ -143,7 +138,6 @@ app.post("/register", async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-
     const newUser = new User({
       name: name.trim(),
       email: normalizedEmail,
@@ -151,11 +145,9 @@ app.post("/register", async (req, res) => {
     });
 
     await newUser.save();
-
     return res.redirect("/login");
   } catch (error) {
     console.error("Registratiefout:", error);
-
     return res.status(500).send(`
       <h1>Serverfout</h1>
       <p>Er ging iets mis bij het registreren.</p>
@@ -168,11 +160,7 @@ app.post("/register", async (req, res) => {
 // Login verwerken
 app.post("/login", async (req, res) => {
   try {
-    console.log("LOGIN BODY:", req.body);
-
-    const body = req.body || {};
-    const email = body.email;
-    const password = body.password;
+    const { email, password } = req.body || {};
 
     if (!email || !password) {
       return res.status(400).send(`
@@ -183,7 +171,6 @@ app.post("/login", async (req, res) => {
     }
 
     const normalizedEmail = email.toLowerCase().trim();
-
     const user = await User.findOne({ email: normalizedEmail });
 
     if (!user) {
@@ -207,7 +194,6 @@ app.post("/login", async (req, res) => {
     return res.redirect("/dashboard");
   } catch (error) {
     console.error("Loginfout:", error);
-
     return res.status(500).send(`
       <h1>Serverfout</h1>
       <p>Er ging iets mis bij het inloggen.</p>
