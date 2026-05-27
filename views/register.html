@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account aanmaken | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="logo">MijnLevensmap.nl</a>
+
+    <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/hoe-werkt-het">Hoe werkt het?</a>
+      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
+      <a href="/contact">Contact</a>
+      <a href="/login" class="nav-button">Inloggen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="login-page">
+    <div class="container login-grid">
+      <div class="login-intro">
+        <span class="eyebrow">Start met uw levensmap</span>
+
+        <h1>Account aanmaken</h1>
+
+        <p>
+          Maak een account aan om uw persoonlijke levensmap stap voor stap op te bouwen.
+          Bewaar belangrijke gegevens, contactpersonen en wensen overzichtelijk op één plek.
+        </p>
+
+        <div class="notice">
+          <strong>Let op:</strong>
+          Gebruik een sterk wachtwoord en deel uw inloggegevens nooit met anderen.
+        </div>
+      </div>
+
+      <div class="login-panel">
+        <h2>Registreren</h2>
+
+        <p class="login-helper">
+          Vul uw gegevens in om een account aan te maken.
+        </p>
+
+        <form action="/register" method="POST" class="contact-form" id="registerForm">
+          <div class="form-row">
+            <label for="name">Naam</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Uw naam"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="email">E-mailadres</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="uwnaam@email.nl"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="password">Wachtwoord</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Minimaal 8 tekens"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="confirmPassword">Herhaal wachtwoord</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Herhaal uw wachtwoord"
+              autocomplete="new-password"
+              minlength="8"
+              required
+            />
+          </div>
+
+          <p id="passwordError" class="form-error" style="display: none;">
+            De wachtwoorden komen niet overeen.
+          </p>
+
+          <button type="submit" class="button primary full-width">
+            Account aanmaken
+          </button>
+        </form>
+
+        <div class="login-links">
+          <a href="/login">Ik heb al een account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>&copy; 2026 MijnLevensmap.nl</p>
+
+    <div>
+      <a href="/privacy">Privacy</a>
+      <a href="/voorwaarden">Voorwaarden</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+    });
+  }
+
+  const registerForm = document.getElementById("registerForm");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  const passwordError = document.getElementById("passwordError");
+
+  if (registerForm) {
+    registerForm.addEventListener("submit", function (event) {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        event.preventDefault();
+
+        passwordError.style.display = "block";
+        confirmPasswordInput.focus();
+      } else {
+        passwordError.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

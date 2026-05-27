@@ -1,27 +1,29 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-dotenv.config();
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-const app = express();
-const PORT = 3000;
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
 
-app.use(cors());
-app.use(express.json());
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Database verbonden!'))
-  .catch((err) => console.log('Database fout:', err));
-
-const authRoutes = require('./routes/auth');
-app.use('/api/auth', authRoutes);
-
-app.get('/', (req, res) => {
-  res.json({ message: 'Welkom!' });
-});
-
-app.listen(PORT, () => {
-  console.log('Server draait op http://localhost:' + PORT);
-});
+module.exports = mongoose.model("User", userSchema);
