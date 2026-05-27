@@ -1,162 +1,149 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Mijnlevensmap.nl</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-  <div class="container nav">
-    <a href="/" class="logo">MijnLevensmap.nl</a>
+    <div class="container nav">
+      <a href="/" class="logo">MijnLevensmap.nl</a>
 
-    <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <a href="/hoe-werkt-het">Hoe werkt het?</a>
-      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-      <a href="/contact">Contact</a>
-      <a href="/login" class="nav-button">Inloggen</a>
-    </nav>
-  </div>
-</header>
+      <nav class="main-nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/contact">Contact</a>
+        <a href="/" class="nav-button">Uitloggen</a>
+      </nav>
+    </div>
+  </header>
 
-  <main class="dashboard">
-    <section class="dashboard-header">
-      <div>
-        <p class="label">Demo-dashboard</p>
-        <h1>Mijn nalatenschapsmap</h1>
-        <p>
-          Dit dashboard laat zien hoe een persoonlijke omgeving later ingericht kan worden.
-          Er worden in deze demo geen echte gegevens opgeslagen.
-        </p>
-      </div>
+  <main>
+    <section class="dashboard-hero">
+      <div class="container dashboard-hero-grid">
+        <div>
+          <span class="eyebrow dark">Mijn overzicht</span>
+          <h1>Welkom in uw persoonlijke levensmap.</h1>
+          <p>
+            Beheer hier stap voor stap uw belangrijke gegevens, documenten, contactpersonen
+            en persoonlijke wensen.
+          </p>
+        </div>
 
-      <div class="status-card">
-        <strong>Status</strong>
-        <span>Conceptomgeving</span>
-        <p>Geen echte documenten of persoonsgegevens gebruiken.</p>
+        <div class="dashboard-status">
+          <strong>Status levensmap</strong>
+          <div class="progress-bar">
+            <span style="width: 35%;"></span>
+          </div>
+          <p>35% ingevuld</p>
+        </div>
       </div>
     </section>
 
-    <section class="dashboard-grid">
-      <article class="dashboard-card">
-        <span class="dashboard-icon">01</span>
-        <h2>Mijn documenten</h2>
-        <p>Overzicht van belangrijke documenten, verzekeringen en praktische gegevens.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+    <section class="section">
+      <div class="container dashboard-grid">
+        <article class="dashboard-card">
+          <div class="dashboard-icon">01</div>
+          <h2>Persoonlijke gegevens</h2>
+          <p>
+            Vul uw basisgegevens in, zoals naam, adres, geboortedatum en belangrijke persoonlijke informatie.
+          </p>
+          <a href="#" class="dashboard-link">Open onderdeel</a>
+        </article>
 
-      <article class="dashboard-card">
-        <span class="dashboard-icon">02</span>
-        <h2>Laatste wensen</h2>
-        <p>Ruimte voor persoonlijke wensen rondom afscheid, bezittingen en praktische zaken.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+        <article class="dashboard-card">
+          <div class="dashboard-icon">02</div>
+          <h2>Contactpersonen</h2>
+          <p>
+            Voeg familieleden, vrienden, adviseurs of andere belangrijke contactpersonen toe.
+          </p>
+          <a href="#" class="dashboard-link">Open onderdeel</a>
+        </article>
 
-      <article class="dashboard-card">
-        <span class="dashboard-icon">03</span>
-        <h2>Contactpersonen</h2>
-        <p>Belangrijke personen zoals familie, gemachtigden, notaris of adviseur.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+        <article class="dashboard-card">
+          <div class="dashboard-icon">03</div>
+          <h2>Documenten</h2>
+          <p>
+            Bewaar verwijzingen naar belangrijke documenten of noteer waar deze te vinden zijn.
+          </p>
+          <a href="#" class="dashboard-link">Open onderdeel</a>
+        </article>
 
-      <article class="dashboard-card">
-        <span class="dashboard-icon">04</span>
-        <h2>Toegang voor nabestaanden</h2>
-        <p>Concept voor het later veilig delen van informatie met aangewezen personen.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+        <article class="dashboard-card">
+          <div class="dashboard-icon">04</div>
+          <h2>Wensen & instructies</h2>
+          <p>
+            Leg praktische wensen en instructies vast voor later, zodat uw naasten duidelijkheid hebben.
+          </p>
+          <a href="#" class="dashboard-link">Open onderdeel</a>
+        </article>
 
-      <article class="dashboard-card">
-        <span class="dashboard-icon">05</span>
-        <h2>Controlelijst</h2>
-        <p>Een overzicht van onderdelen die nog ingevuld of gecontroleerd moeten worden.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+        <article class="dashboard-card">
+          <div class="dashboard-icon">05</div>
+          <h2>Gemachtigden</h2>
+          <p>
+            Beheer later wie toegang mag krijgen tot bepaalde onderdelen van uw levensmap.
+          </p>
+          <a href="#" class="dashboard-link">Binnenkort beschikbaar</a>
+        </article>
 
-      <article class="dashboard-card">
-        <span class="dashboard-icon">06</span>
-        <h2>Instellingen</h2>
-        <p>Demo van accountinstellingen, meldingen en toegangsrechten.</p>
-        <a href="#">Bekijk demo</a>
-      </article>
+        <article class="dashboard-card">
+          <div class="dashboard-icon">06</div>
+          <h2>Veiligheid</h2>
+          <p>
+            Controleer uw accountinstellingen, wachtwoord en toekomstige beveiligingsopties.
+          </p>
+          <a href="#" class="dashboard-link">Open onderdeel</a>
+        </article>
+      </div>
     </section>
 
-    <section class="dashboard-note">
-      <h2>Belangrijke demo-toelichting</h2>
-      <p>
-        Dit dashboard is onderdeel van een conceptpresentatie. In een echte versie zijn
-        beveiliging, privacy, verificatie, dataverwerking en toegangsrechten essentieel.
-        Deze demo is bedoeld om de werking en marktpotentie te laten zien.
-      </p>
+    <section class="section soft">
+      <div class="container two-column">
+        <div>
+          <h2>Rustig opbouwen</h2>
+          <p>
+            U hoeft niet alles in één keer in te vullen. Begin met de belangrijkste gegevens
+            en vul uw levensmap later verder aan.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Let op:</strong>
+          Dit dashboard is nu nog een eerste versie. Opslaan, accounts en documentbeheer bouwen we hierna stap voor stap.
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>MijnLevensmap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
+    <div class="container footer-grid">
+      <p>&copy; 2026 MijnLevensmap.nl</p>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/voorwaarden">Voorwaarden</a>
+        <a href="/contact">Contact</a>
       </div>
-
-      <p>
-        MijnLevensmap.nl is een professioneel digitaal concept voor het overzichtelijk
-        voorbereiden van belangrijke informatie, documenten, wensen en contactpersonen.
-      </p>
     </div>
+  </footer>
 
-    <div class="footer-column">
-      <h3>Website</h3>
-      <a href="/">Home</a>
-      <a href="/over-ons">Over ons</a>
-      <a href="/hoe-werkt-het">Hoe werkt het</a>
-      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-    </div>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-    <div class="footer-column">
-      <h3>Concept</h3>
-      <a href="/login">Demo-login</a>
-      <a href="/dashboard">Demo-dashboard</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/contact">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Belangrijk</h3>
-      <p>
-        Deze website is een conceptomgeving. Gebruik geen echte persoonlijke gegevens,
-        documenten of officiële inloggegevens.
-      </p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 MijnLevensmap.nl — Conceptwebsite</span>
-    <span>Geen officiële overheidsdienst · Geen DigiD-login</span>
-  </div>
-</footer>
-<script>
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mainNav = document.querySelector(".main-nav");
-
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mainNav.classList.toggle("is-open");
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
-    });
-  }
-</script>
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+      });
+    }
+  </script>
 </body>
 </html>
