@@ -12,7 +12,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
-
+app.get("/persoonlijke-gegevens", (req, res) => {
+  const filePath = path.join(__dirname, "views", "persoonlijke-gegevens.html");
+  const html = fs.readFileSync(filePath, "utf8");
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.send(html);
+});
 app.get('/', (req, res) => {
   const filePath = path.join(__dirname, 'views', 'home.html');
   const html = fs.readFileSync(filePath, 'utf8');
@@ -55,6 +60,7 @@ app.get('/dashboard', (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(html);
 });
+
 app.get('/contact', (req, res) => {
   const filePath = path.join(__dirname, 'views', 'contact.html');
   const html = fs.readFileSync(filePath, 'utf8');

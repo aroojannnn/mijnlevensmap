@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persoonlijke gegevens | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/dashboard" class="logo">MijnLevensmap.nl</a>
+
+      <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/contact">Contact</a>
+        <a href="/" class="nav-button">Uitloggen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow dark">Persoonlijke gegevens</span>
+        <h1>Uw basisgegevens overzichtelijk vastleggen.</h1>
+        <p>
+          Noteer hier de belangrijkste persoonlijke gegevens. Dit onderdeel vormt de basis
+          van uw levensmap.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-layout">
+        <div class="form-card">
+          <h2>Basisgegevens</h2>
+          <p>
+            Vul de gegevens zorgvuldig in. Later koppelen we deze pagina aan veilige opslag.
+          </p>
+
+          <form class="data-form" action="#" method="post">
+            <div class="form-grid">
+              <div class="field">
+                <label for="firstName">Voornaam</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Uw voornaam" />
+              </div>
+
+              <div class="field">
+                <label for="lastName">Achternaam</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Uw achternaam" />
+              </div>
+
+              <div class="field">
+                <label for="birthDate">Geboortedatum</label>
+                <input type="date" id="birthDate" name="birthDate" />
+              </div>
+
+              <div class="field">
+                <label for="birthPlace">Geboorteplaats</label>
+                <input type="text" id="birthPlace" name="birthPlace" placeholder="Geboorteplaats" />
+              </div>
+
+              <div class="field full">
+                <label for="address">Adres</label>
+                <input type="text" id="address" name="address" placeholder="Straatnaam en huisnummer" />
+              </div>
+
+              <div class="field">
+                <label for="postalCode">Postcode</label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="1234 AB" />
+              </div>
+
+              <div class="field">
+                <label for="city">Woonplaats</label>
+                <input type="text" id="city" name="city" placeholder="Woonplaats" />
+              </div>
+
+              <div class="field">
+                <label for="phone">Telefoonnummer</label>
+                <input type="tel" id="phone" name="phone" placeholder="06 12345678" />
+              </div>
+
+              <div class="field">
+                <label for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="uw@email.nl" />
+              </div>
+
+              <div class="field full">
+                <label for="notes">Aanvullende opmerkingen</label>
+                <textarea id="notes" name="notes" rows="5" placeholder="Bijvoorbeeld belangrijke praktische informatie"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button form-button">Gegevens opslaan</button>
+              <a href="/dashboard" class="button ghost-button">Terug naar dashboard</a>
+            </div>
+          </form>
+        </div>
+
+        <aside class="info-panel">
+          <h2>Waarom dit invullen?</h2>
+
+          <div class="info-item">
+            <strong>Overzicht</strong>
+            <p>Uw naasten weten later waar ze belangrijke basisinformatie kunnen vinden.</p>
+          </div>
+
+          <div class="info-item">
+            <strong>Stap voor stap</strong>
+            <p>U hoeft niet alles in één keer compleet te maken. Begin met wat u al weet.</p>
+          </div>
+
+          <div class="info-item">
+            <strong>Privacy</strong>
+            <p>Vermeld alleen gegevens die u bewust wilt vastleggen in uw levensmap.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2026 MijnLevensmap.nl</p>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/voorwaarden">Voorwaarden</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Menu sluiten" : "Menu openen");
+      });
+    }
+  </script>
+</body>
+</html>
