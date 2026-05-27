@@ -1,229 +1,108 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MijnLevensmap.nl - Rust en overzicht voor later</title>
-  <meta name="description" content="MijnLevensmap.nl helpt mensen belangrijke informatie, documenten, wensen en contactpersonen overzichtelijk voor later voor te bereiden.">
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mijnlevensmap.nl | Alles belangrijk op één plek</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>MijnLevensmap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
-      </div>
-
+    <div class="container nav">
+      <a href="/" class="logo">MijnLevensmap.nl</a>
       <nav>
         <a href="/">Home</a>
-        <a href="/over-ons">Over ons</a>
-        <a href="/hoe-werkt-het">Hoe werkt het</a>
-        <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-        <a href="/login">Inloggen</a>
-        <a href="/privacy">Privacy</a>
         <a href="/contact">Contact</a>
+        <a href="/login" class="nav-button">Inloggen</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-content">
-        <p class="label">Binnenkort beschikbaar</p>
-
-        <h1>Bewaar belangrijke informatie voor later overzichtelijk op één plek.</h1>
-
-        <p class="hero-text">
-          MijnLevensmap.nl is in ontwikkeling als digitale omgeving waarin u belangrijke
-          informatie, documenten, laatste wensen en contactpersonen overzichtelijk kunt
-          voorbereiden voor uzelf en uw nabestaanden.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="/hoe-werkt-het">Bekijk hoe het werkt</a>
-          <a class="button secondary" href="/contact">Blijf op de hoogte</a>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Rust, overzicht en zekerheid</span>
+          <h1>Bewaar uw belangrijke gegevens overzichtelijk op één veilige plek.</h1>
+          <p>
+            MijnLevensmap.nl helpt u om persoonlijke informatie, wensen, contactpersonen
+            en belangrijke documenten duidelijk vast te leggen voor uzelf en uw naasten.
+          </p>
+          <div class="hero-actions">
+            <a href="/login" class="button primary">Inloggen</a>
+            <a href="/contact" class="button secondary">Neem contact op</a>
+          </div>
         </div>
 
-        <p class="notice">
-          De persoonlijke omgeving is momenteel een demo. Gebruik nog geen echte
-          persoonlijke gegevens, documenten of officiële inloggegevens.
-        </p>
-      </div>
-
-      <aside class="login-card" id="login">
-        <h2>Persoonlijke omgeving</h2>
-        <p>
-          De persoonlijke omgeving van MijnLevensmap.nl is nog in ontwikkeling.
-          U kunt alvast een demo bekijken.
-        </p>
-
-        <a class="login-option main" href="/login">
-          <span>Bekijk demo-inlog</span>
-          <strong>Voor gebruikers</strong>
-        </a>
-
-        <a class="login-option" href="/dashboard">
-          <span>Bekijk demo-dashboard</span>
-          <strong>Voorbeeld van de omgeving</strong>
-        </a>
-
-        <a class="login-option help" href="/contact">
-          <span>Interesse of vragen?</span>
-          <strong>Neem contact op</strong>
-        </a>
-
-        <small>
-          MijnLevensmap.nl is geen officiële overheidsdienst en gebruikt geen echte DigiD-login.
-        </small>
-      </aside>
-    </section>
-
-    <section class="trust-row">
-      <div>
-        <strong>Voorbereid</strong>
-        <span>Belangrijke informatie overzichtelijk bewaren</span>
-      </div>
-      <div>
-        <strong>Duidelijk</strong>
-        <span>Minder zoeken voor nabestaanden</span>
-      </div>
-      <div>
-        <strong>In ontwikkeling</strong>
-        <span>Stap voor stap naar een veilige omgeving</span>
-      </div>
-    </section>
-
-    <section class="section" id="informatie">
-      <div class="section-heading">
-        <p class="label">Wat kunt u straks vastleggen?</p>
-        <h2>Een levensmap voor informatie die later belangrijk kan zijn</h2>
-        <p>
-          MijnLevensmap.nl richt zich op overzicht, voorbereiding en duidelijkheid.
-          Geen ingewikkelde taal, maar een rustige plek waar belangrijke zaken
-          begrijpelijk worden geordend.
-        </p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Belangrijke documenten</h3>
-          <p>
-            Denk aan praktische informatie over verzekeringen, abonnementen,
-            bezittingen, administratie en andere documenten die later nodig kunnen zijn.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Laatste wensen</h3>
-          <p>
-            Leg voorkeuren en persoonlijke aanwijzingen vast rondom afscheid,
-            bezittingen en zaken waarvan u wilt dat nabestaanden ze weten.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Contactpersonen</h3>
-          <p>
-            Verzamel belangrijke contactpersonen zoals familie, vrienden, adviseurs,
-            notaris, verzekeraar of andere betrokkenen.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="steps">
-      <div class="section-heading light">
-        <p class="label">Hoe werkt het straks?</p>
-        <h2>Voorbereiden in drie duidelijke stappen</h2>
-      </div>
-
-      <div class="step-grid">
-        <div class="step">
-          <span>1</span>
-          <h3>Verzamel informatie</h3>
-          <p>
-            Breng belangrijke gegevens, documenten en contactpersonen overzichtelijk samen.
-          </p>
-        </div>
-
-        <div class="step">
-          <span>2</span>
-          <h3>Leg wensen vast</h3>
-          <p>
-            Noteer persoonlijke wensen en praktische aanwijzingen voor later.
-          </p>
-        </div>
-
-        <div class="step">
-          <span>3</span>
-          <h3>Geef duidelijkheid</h3>
-          <p>
-            Zorg dat nabestaanden later weten waar zij belangrijke informatie kunnen vinden.
-          </p>
+        <div class="hero-card">
+          <h2>Uw levensmap</h2>
+          <ul>
+            <li>Persoonlijke gegevens</li>
+            <li>Belangrijke contactpersonen</li>
+            <li>Wensen en instructies</li>
+            <li>Documenten en overzicht</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <h2>MijnLevensmap.nl wordt ontwikkeld voor mensen die vooruit willen denken.</h2>
-      <p>
-        De website is live als informatiepagina. De persoonlijke omgeving wordt stap
-        voor stap verder uitgewerkt. Wilt u op de hoogte blijven of heeft u een vraag?
-      </p>
-      <a class="button primary" href="/contact">Neem contact op</a>
+    <section class="section">
+      <div class="container">
+        <h2>Waarom MijnLevensmap.nl?</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Overzicht</h3>
+            <p>
+              Geen losse papieren, wachtwoorden of belangrijke informatie verspreid over
+              verschillende plekken. Alles staat duidelijk bij elkaar.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Rust voor later</h3>
+            <p>
+              Leg vast wat belangrijk is, zodat uw naasten later niet hoeven te zoeken
+              of te raden naar uw wensen.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Betrouwbaar ingericht</h3>
+            <p>
+              Een rustige, duidelijke omgeving voor gevoelige informatie. Zonder poespas,
+              met aandacht voor veiligheid en eenvoud.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container two-column">
+        <div>
+          <h2>Voor uzelf én voor uw naasten</h2>
+          <p>
+            Een levensmap is bedoeld om belangrijke zaken op tijd te ordenen. Denk aan
+            contactgegevens, praktische instructies, wensen rondom zorg of afscheid, en
+            verwijzingen naar documenten.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Let op:</strong>
+          MijnLevensmap.nl is een particulier platform en geen officiële overheidsdienst.
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="brand">
-          <div class="brand-mark">M</div>
-          <div>
-            <strong>MijnLevensmap.nl</strong>
-            <span>Rust en overzicht voor later</span>
-          </div>
-        </div>
-
-        <p>
-          MijnLevensmap.nl is in ontwikkeling als digitale omgeving voor het
-          overzichtelijk voorbereiden van belangrijke informatie, documenten,
-          wensen en contactpersonen.
-        </p>
-      </div>
-
-      <div class="footer-column">
-        <h3>Website</h3>
-        <a href="/">Home</a>
-        <a href="/over-ons">Over ons</a>
-        <a href="/hoe-werkt-het">Hoe werkt het</a>
-        <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-      </div>
-
-      <div class="footer-column">
-        <h3>Omgeving</h3>
-        <a href="/login">Demo-login</a>
-        <a href="/dashboard">Demo-dashboard</a>
+    <div class="container footer-grid">
+      <p>&copy; 2026 MijnLevensmap.nl</p>
+      <div>
         <a href="/privacy">Privacy</a>
+        <a href="/voorwaarden">Voorwaarden</a>
         <a href="/contact">Contact</a>
       </div>
-
-      <div class="footer-column">
-        <h3>Belangrijk</h3>
-        <p>
-          De persoonlijke omgeving is momenteel een demo. Gebruik geen echte
-          persoonlijke gegevens, documenten of officiële inloggegevens.
-        </p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 MijnLevensmap.nl — In ontwikkeling</span>
-      <span>Geen officiële overheidsdienst · Geen DigiD-login</span>
     </div>
   </footer>
 </body>
