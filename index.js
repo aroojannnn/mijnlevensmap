@@ -11,52 +11,60 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
-// Hiermee kan Render style.css uit de hoofdmap laden
-app.use(express.static(__dirname));
-
-function sendHtml(res, fileName) {
-  const filePath = path.join(__dirname, fileName);
+app.get('/', (req, res) => {
+  const filePath = path.join(__dirname, 'views', 'home.html');
   const html = fs.readFileSync(filePath, 'utf8');
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.send(html);
-}
-
-app.get('/', (req, res) => {
-  sendHtml(res, 'home.html');
 });
-
 app.get('/over-ons', (req, res) => {
-  sendHtml(res, 'over-ons.html');
+  const filePath = path.join(__dirname, 'views', 'over-ons.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
-
-app.get('/hoe-werkt-het', (req, res) => {
-  sendHtml(res, 'hoe-werkt-het.html');
-});
-
 app.get('/veelgestelde-vragen', (req, res) => {
-  sendHtml(res, 'veelgestelde-vragen.html');
+  const filePath = path.join(__dirname, 'views', 'veelgestelde-vragen.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
-
 app.get('/privacy', (req, res) => {
-  sendHtml(res, 'privacy.html');
+  const filePath = path.join(__dirname, 'views', 'privacy.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
-
+app.get('/hoe-werkt-het', (req, res) => {
+  const filePath = path.join(__dirname, 'views', 'hoe-werkt-het.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
+});
 app.get('/login', (req, res) => {
-  sendHtml(res, 'login.html');
+  const filePath = path.join(__dirname, 'views', 'login.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
-
 app.get('/dashboard', (req, res) => {
-  sendHtml(res, 'dashboard.html');
+  const filePath = path.join(__dirname, 'views', 'dashboard.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
-
 app.get('/contact', (req, res) => {
-  sendHtml(res, 'contact.html');
+  const filePath = path.join(__dirname, 'views', 'contact.html');
+  const html = fs.readFileSync(filePath, 'utf8');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(html);
 });
 
 app.get('/api/status', (req, res) => {
   res.json({
-    message: 'Nalatenschap.nl API werkt',
+    message: 'MijnLevensmap.nl API werkt',
     status: 'Server draait',
     port: PORT
   });
