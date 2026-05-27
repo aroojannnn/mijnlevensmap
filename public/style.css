@@ -454,3 +454,112 @@ h1 {
     padding: 52px 0 38px;
   }
 }
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.login-panel,
+.login-options .option-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.login-panel h2,
+.option-card h3 {
+  color: var(--blue-dark);
+  margin-bottom: 10px;
+}
+
+.login-panel p,
+.option-card p {
+  color: var(--muted);
+}
+
+.login-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.login-form label {
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 14px;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+}
+
+.login-form input:focus {
+  outline: 3px solid rgba(21, 66, 115, 0.16);
+  border-color: var(--blue);
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0 !important;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+}
+
+.text-link {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover {
+  color: var(--blue-dark);
+}
+
+.login-options {
+  display: grid;
+  gap: 18px;
+}
+
+.option-card.highlighted {
+  background: var(--blue-light);
+  border-color: rgba(21, 66, 115, 0.22);
+}
+
+.option-button {
+  margin-top: 6px;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.option-button:hover {
+  background: var(--blue-dark);
+}
+
+@media (max-width: 860px) {
+  .login-grid {
+    grid-template-columns: 1fr;
+  }
+}

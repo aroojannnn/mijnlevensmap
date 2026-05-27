@@ -1,135 +1,117 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inloggen - Mijnlevensmap.nl</title>
-  <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inloggen | MijnLevensmap.nl</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>Mijnlevensmap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
-      </div>
-
+    <div class="container nav">
+      <a href="/" class="logo">MijnLevensmap.nl</a>
       <nav>
         <a href="/">Home</a>
-        <a href="#informatie">Informatie</a>
-        <a href="/login">Inloggen</a>
-        <a href="/contact">Contact</a>
-        <a href="/over-ons">Over ons</a>
-        <a href="/hoe-werkt-het">Hoe werkt het</a>
+        <a href="/hoe-werkt-het">Hoe werkt het?</a>
         <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+        <a href="/login" class="nav-button">Inloggen</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="login-page">
-      <div class="login-intro">
-        <p class="label">Demo-inlogomgeving</p>
-        <h1>Inloggen op uw persoonlijke omgeving</h1>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow dark">Veilig inloggen</span>
+        <h1>Toegang tot uw persoonlijke levensmap.</h1>
         <p>
-          Kies hieronder hoe u wilt doorgaan. Deze pagina is onderdeel van een
-          conceptwebsite en verwerkt geen echte officiële of persoonlijke gegevens.
+          Log in om uw gegevens, documenten, wensen en contactpersonen overzichtelijk te beheren.
+          Deze pagina is onderdeel van MijnLevensmap.nl en is geen officiële overheidsdienst.
         </p>
+      </div>
+    </section>
 
-        <div class="warning-box">
-          <strong>Let op:</strong>
-          dit is geen DigiD-login en geen officiële overheidsdienst.
-          Gebruik hier geen echte DigiD-gegevens, wachtwoorden of documenten.
+    <section class="section">
+      <div class="container login-grid">
+        <div class="login-panel">
+          <h2>Inloggen met e-mail</h2>
+          <p>
+            Gebruik uw e-mailadres en wachtwoord om toegang te krijgen tot uw account.
+          </p>
+
+          <form class="login-form" action="#" method="post">
+            <label for="email">E-mailadres</label>
+            <input type="email" id="email" name="email" placeholder="uw@email.nl" />
+
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password" placeholder="Uw wachtwoord" />
+
+            <div class="form-row">
+              <label class="check-label">
+                <input type="checkbox" name="remember" />
+                Ingelogd blijven
+              </label>
+              <a href="#" class="text-link">Wachtwoord vergeten?</a>
+            </div>
+
+            <button type="submit" class="button form-button">Inloggen</button>
+          </form>
         </div>
+
+        <aside class="login-options">
+          <article class="option-card highlighted">
+            <h3>Nog geen account?</h3>
+            <p>
+              Maak een account aan en begin met het veilig ordenen van belangrijke informatie.
+            </p>
+            <a href="#" class="button option-button">Account aanmaken</a>
+          </article>
+
+          <article class="option-card">
+            <h3>Gemachtigde toegang</h3>
+            <p>
+              Heeft u toegang gekregen namens iemand anders? Log dan in met uw eigen account.
+            </p>
+            <a href="#" class="text-link">Meer over gemachtigden</a>
+          </article>
+
+          <article class="option-card">
+            <h3>Let op</h3>
+            <p>
+              MijnLevensmap.nl gebruikt geen DigiD-login en is geen onderdeel van de overheid.
+            </p>
+          </article>
+        </aside>
       </div>
+    </section>
 
-      <div class="login-methods">
-        <a class="method-card primary-method" href="/dashboard">
-          <div>
-            <h2>Inloggen met persoonlijke code</h2>
-            <p>Ga door naar de demo-omgeving als gebruiker.</p>
-          </div>
-          <span>›</span>
-        </a>
-
-        <a class="method-card" href="/dashboard">
-          <div>
-            <h2>Inloggen voor nabestaanden</h2>
-            <p>Demo-toegang voor familie of gemachtigde contactpersonen.</p>
-          </div>
-          <span>›</span>
-        </a>
-
-        <a class="method-card" href="/contact">
-          <div>
-            <h2>Hulp nodig met inloggen?</h2>
-            <p>Neem contact op voor vragen over deze demo-omgeving.</p>
-          </div>
-          <span>›</span>
-        </a>
-      </div>
-
-      <div class="login-info">
-        <h2>Waarom een demo-login?</h2>
-        <p>
-          Deze loginpagina laat zien hoe Mijnlevensmap.nl later als platform zou
-          kunnen werken. In een echte versie zouden beveiliging, verificatie,
-          privacy en toegangsrechten professioneel moeten worden ingericht.
-        </p>
+    <section class="section soft">
+      <div class="container two-column">
+        <div>
+          <h2>Rustig en overzichtelijk beheren</h2>
+          <p>
+            Binnen uw account kunt u belangrijke gegevens stap voor stap vastleggen.
+            Zo houdt u overzicht voor uzelf en duidelijkheid voor uw naasten.
+          </p>
+        </div>
+        <div class="notice">
+          <strong>Beveiliging:</strong>
+          Deel uw wachtwoord nooit met anderen. Gebruik bij voorkeur een uniek en sterk wachtwoord.
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="brand">
-        <div class="brand-mark">M</div>
-        <div>
-          <strong>MijnLevensmap.nl</strong>
-          <span>Rust en overzicht voor later</span>
-        </div>
+    <div class="container footer-grid">
+      <p>&copy; 2026 MijnLevensmap.nl</p>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/voorwaarden">Voorwaarden</a>
+        <a href="/contact">Contact</a>
       </div>
-
-      <p>
-        MijnLevensmap.nl is een professioneel digitaal concept voor het overzichtelijk
-        voorbereiden van belangrijke informatie, documenten, wensen en contactpersonen.
-      </p>
     </div>
-
-    <div class="footer-column">
-      <h3>Website</h3>
-      <a href="/">Home</a>
-      <a href="/over-ons">Over ons</a>
-      <a href="/hoe-werkt-het">Hoe werkt het</a>
-      <a href="/veelgestelde-vragen">Veelgestelde vragen</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Concept</h3>
-      <a href="/login">Demo-login</a>
-      <a href="/dashboard">Demo-dashboard</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/contact">Contact</a>
-    </div>
-
-    <div class="footer-column">
-      <h3>Belangrijk</h3>
-      <p>
-        Deze website is een conceptomgeving. Gebruik geen echte persoonlijke gegevens,
-        documenten of officiële inloggegevens.
-      </p>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 MijnLevensmap.nl — Conceptwebsite</span>
-    <span>Geen officiële overheidsdienst · Geen DigiD-login</span>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
